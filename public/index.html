@@ -23,8 +23,12 @@
         socket.emit('mensaje', {
             nombre: 'Uriel'
         })
-        socket.on('mensaje', (mensaje) => {
-            console.log(mensaje);
+        socket.emit('emitir-mensaje', 'uriel');
+        socket.on('active-bands', (payload) => {
+            console.table(payload);
+        })
+        socket.on('flutter-io', (mensaje) => {
+            console.log('Mensaje recibido desde el cliente de flutter: ', mensaje);
         })
     </script>
 </body>
